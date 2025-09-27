@@ -18,6 +18,7 @@ export default defineConfig({
       formats: ['es', 'umd'],
       fileName: (format: string) => `index.${format === 'es' ? 'esm.js' : 'js'}`
     },
+    chunkSizeWarningLimit: 1000,
     rollupOptions: {
       external: ['react', 'react-dom'],
       output: {
