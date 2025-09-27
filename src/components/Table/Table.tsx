@@ -119,7 +119,7 @@ export function Table<T extends Record<string, any>>({
                   className="px-6 py-4 whitespace-nowrap text-sm text-secondary-900"
                 >
                   {column.render 
-                    ? column.render(row[column.key], row, rowIndex)
+                    ? column.render(row[column.key], row)
                     : String(row[column.key] || '')
                   }
                 </td>
