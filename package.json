@@ -31,13 +31,15 @@
     "prepare-publish": "npm run build && npm run build-storybook",
     "demo": "cd demo && npm run dev",
     "build-all": "npm run build && npm run build-storybook && cd demo && npm ci && npm run build",
-    "deploy": "bash scripts/deploy.sh"
+    "deploy": "bash scripts/deploy.sh",
+    "build-with-demo": "npm run build && npm run build-storybook && cd demo && npm run build && cd .. && if not exist storybook-static\\demo mkdir storybook-static\\demo && xcopy demo\\dist storybook-static\\demo /E /Y"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "@vercel/analytics": "^1.5.0",
     "clsx": "^2.0.0",
-    "lucide-react": "^0.294.0"
+    "lucide-react": "^0.294.0",
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "^8.0.0",

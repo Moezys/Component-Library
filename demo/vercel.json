@@ -1,0 +1,16 @@
+{
+  "name": "component-library-demo",
+  "builds": [
+    {
+      "src": "demo/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "buildCommand": "npm run build",
+        "distDir": "dist"
+      }
+    }
+  ],
+  "buildCommand": "cd demo && npm ci && npm run build",
+  "outputDirectory": "demo/dist",
+  "installCommand": "npm ci && cd demo && npm ci"
+}

@@ -1,6 +1,7 @@
 import type { Preview } from '@storybook/react';
 import React from 'react';
 import '../src/styles/globals.css';
+import { Analytics } from '@vercel/analytics/react';
 
 const preview: Preview = {
   parameters: {
@@ -37,7 +38,8 @@ const preview: Preview = {
       return React.createElement(
         'div',
         { 'data-theme': theme === 'blue' ? undefined : theme },
-        React.createElement(Story)
+        React.createElement(Story),
+        React.createElement(Analytics)
       );
     },
   ],

@@ -1,6 +1,16 @@
 {
-  "buildCommand": "npm run build-storybook",
+  "buildCommand": "npm ci && npm run build && npm run build-storybook && cd demo && npm ci && npm run build && cd .. && mkdir -p storybook-static/demo && cp -r demo/dist/* storybook-static/demo/",
   "outputDirectory": "storybook-static",
   "framework": null,
-  "installCommand": "npm ci"
+  "installCommand": "npm ci",
+  "rewrites": [
+    {
+      "source": "/demo/(.*)",
+      "destination": "/demo/$1"
+    },
+    {
+      "source": "/demo",
+      "destination": "/demo/index.html"
+    }
+  ]
 }

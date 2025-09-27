@@ -156,8 +156,9 @@ npm run build-all
 ## Live Demo
 
 🌐 **GitHub Repository**: [https://github.com/Moezys/Component-Library](https://github.com/Moezys/Component-Library)  
-📚 **Storybook Documentation**: [Deploy to Vercel to get URL]  
-🎯 **Interactive Demo**: [Available in Storybook]
+📚 **Storybook Documentation**: [https://component-library-opal-chi.vercel.app](https://component-library-opal-chi.vercel.app)  
+🎯 **Interactive Demo**: [https://component-library-opal-chi.vercel.app/demo](https://component-library-opal-chi.vercel.app/demo)  
+⚡ **Analytics**: Powered by Vercel Analytics
 
 ## Testing
 
