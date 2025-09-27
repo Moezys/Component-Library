@@ -70,8 +70,13 @@ jobs:
     - name: Build library
       run: npm run build
     
+    - name: Clean demo dependencies (prevent esbuild conflicts)
+      run: |
+        cd demo
+        rm -rf node_modules package-lock.json
+    
     - name: Install demo dependencies
-      run: cd demo && npm ci
+      run: cd demo && npm install
     
     - name: Build demo app
       run: cd demo && npm run build
