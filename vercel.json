@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm ci && npm run build && npm run build-storybook && cd demo && npm ci && npm run build && cd .. && mkdir -p storybook-static/demo && cp -r demo/dist/* storybook-static/demo/",
+  "buildCommand": "npm ci && npm run build && npm run build-storybook && cd demo && rm -rf node_modules package-lock.json && npm install && npm run build && cd .. && mkdir -p storybook-static/demo && cp -r demo/dist/* storybook-static/demo/",
   "outputDirectory": "storybook-static",
   "framework": null,
   "installCommand": "npm ci",
