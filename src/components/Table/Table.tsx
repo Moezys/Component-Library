@@ -4,7 +4,7 @@ import { cn } from '../../utils/cn'
 export interface TableColumn<T> {
   key: keyof T
   header: string
-  render?: (value: T[keyof T], row: T, index: number) => React.ReactNode
+  render?: (value: T[keyof T], row: T) => React.ReactNode
   sortable?: boolean
   className?: string
 }

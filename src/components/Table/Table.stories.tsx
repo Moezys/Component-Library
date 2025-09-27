@@ -2,6 +2,14 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Table } from './Table'
 import { Button } from '../Button/Button'
 
+interface User {
+  id: number
+  name: string
+  email: string
+  role: string
+  status: string
+}
+
 const meta: Meta<typeof Table> = {
   title: 'Components/Table',
   component: Table,
@@ -74,7 +82,7 @@ const customColumns = [
   {
     key: 'id',
     header: 'Actions',
-    render: (value: any, row: any) => (
+          render: (_value: string, row: User) => (
       <div style={{ display: 'flex', gap: '0.5rem' }}>
         <Button size="sm" variant="outline">Edit</Button>
         <Button size="sm" variant="destructive">Delete</Button>
