@@ -32,13 +32,36 @@ const meta: Meta<typeof Modal> = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-const ModalWithHooks = (args: typeof Default.args) => {
+// Helper component to manage modal state
+const ModalDemo = ({ children, ...args }: any) => {
   const [isOpen, setIsOpen] = useState(false)
   
   return (
     <>
       <Button onClick={() => setIsOpen(true)}>Open Modal</Button>
-      <Modal {...args} isOpen={isOpen} onClose={() => setIsOpen(false)} />
+      <Modal {...args} isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        {children}
+      </Modal>
+    </>
+  )
+}
+
+// Interactive story component
+const InteractiveModalStory = (args: any) => {
+  const [isOpen, setIsOpen] = useState(false)
+  
+  return (
+    <>
+      <Button onClick={() => setIsOpen(true)}>Open Modal</Button>
+      <Modal {...args} isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        <div>
+          <p>This is an interactive modal example.</p>
+          <div style={{ marginTop: '1rem' }}>
+            <Button variant="outline" onClick={() => setIsOpen(false)}>Cancel</Button>
+            <Button style={{ marginLeft: '0.5rem' }} onClick={() => setIsOpen(false)}>Confirm</Button>
+          </div>
+        </div>
+      </Modal>
     </>
   )
 }
@@ -57,6 +80,13 @@ export const Default: Story = {
   ),
   args: {
     title: 'Modal Title',
+  },
+}
+
+export const Interactive: Story = {
+  render: (args) => <InteractiveModalStory {...args} />,
+  args: {
+    title: 'Interactive Modal',
   },
 }
 

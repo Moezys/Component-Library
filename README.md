@@ -155,8 +155,9 @@ npm run build-all
 
 ## Live Demo
 
-🌐 **Storybook Documentation**: [Coming Soon - Deploy to Vercel]  
-🎯 **Interactive Demo**: [Coming Soon - Deploy to Vercel]
+🌐 **GitHub Repository**: [https://github.com/Moezys/Component-Library](https://github.com/Moezys/Component-Library)  
+📚 **Storybook Documentation**: [Deploy to Vercel to get URL]  
+🎯 **Interactive Demo**: [Available in Storybook]
 
 ## Testing
 
